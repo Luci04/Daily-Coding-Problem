@@ -22,4 +22,5 @@
 |------------------------------------------------------------------------------------------------------------------------------------|-----------------------|----------------------|
 | [Avinash Shukla](https://github.com/luci04/) <br> <img src="https://github.com/luci04.png" width="100" height="100">               | India                 | C++                  |                                                                                                       
 | [Anshuman Pandey](https://github.com/crist04/) <br> <img src="https://github.com/crist04.png" width="100" height="100">            | India                 | C++                  |                                                                                                       
+| [Akash Lilhare](https://github.com/akashlilhare/) <br> <img src="https://github.com/akashlilhare.png" width="100" height="100">            | India                 | C++                  |                                                                                                       
 
