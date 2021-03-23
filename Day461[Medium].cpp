@@ -9,32 +9,40 @@
 #define vii vector<ii>
 #define lli long long int
 #define INF 1000000000
+
 const double PI = 3.141592653589793238460;
 typedef std::complex<double> Complex;
 typedef std::valarray<Complex> CArray;
 
 using namespace std;
 
-//Q. Consider the following scenario : there are N mice and N holes placed at
-//   integer points along a line.Given this, find a method that maps mice
-//   to holes such that the largest number of steps any mouse takes is minimized.
-
 int main()
 {
-    int a[] = {1, 4, 9, 15};
-    int b[] = {10, -5, 0, 16};
+    int n, m;
 
-    sort(a, a + 4);
-    sort(b, b + 4);
+    cin >> n >> m;
 
-    int ans = INT_MIN;
+    int dp[n][m];
 
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < n; i++)
     {
-        ans = max(a[i] - b[i], ans);
+        dp[i][0] = 1;
     }
 
-    cout << ans << "\n";
+    for (int i = 0; i < m; i++)
+    {
+        dp[0][i] = 1;
+    }
+
+    for (int i = 1; i < n; i++)
+    {
+        for (int j = 1; j < m; j++)
+        {
+            dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+        }
+    }
+
+    cout << dp[n - 1][m - 1] << "\n";
 
     return 0;
 }

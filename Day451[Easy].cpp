@@ -16,29 +16,29 @@ typedef std::valarray<Complex> CArray;
 
 using namespace std;
 
-int solve(int x)
+// Q.Implement the function fib(n), which returns the nth number in the Fibonacci sequence,
+//  using only O(1) space.
+
+void solve(int n)
 {
-    int rightOne;
-    int nextHigherOneBit;
-    int rightOnesPattern;
-
-    int next = 0;
-    if (x)
+    if (n <= 1)
     {
-        int rightOne = x & -(signed)x;
-        nextHigherOneBit = x + rightOne;
-        rightOnesPattern = x ^ nextHigherOneBit;
-        rightOnesPattern /= rightOne;
-        rightOnesPattern >>= 2;
-
-        next = nextHigherOneBit | rightOnesPattern;
+        cout << n << "\n";
+        return;
     }
-    return next;
+    int a = 0, b = 1;
+    for (int i = 2; i <= n; i++)
+    {
+        int c = a + b;
+        a = b;
+        b = c;
+    }
+
+    cout << b << "\n";
 }
 
 int main()
 {
-    int x = 10;
-    cout << solve(x) << "\n";
+    solve(9);
     return 0;
 }
